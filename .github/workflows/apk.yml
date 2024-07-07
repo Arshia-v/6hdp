@@ -14,18 +14,18 @@ jobs:
     steps:
       - name: Download Ngrok.
         run: |
-          Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-          Invoke-WebRequest https://raw.githubusercontent.com/Riders004/rdp/master/start.bat -OutFile start.bat
-          Invoke-WebRequest https://raw.githubusercontent.com/Riders004/rdp/master/download1.jpeg -OutFile wallpaper.bat
-          Invoke-WebRequest https://raw.githubusercontent.com/Riders004/rdp/master/loop.bat -OutFile loop.bat
+          Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+          Invoke-WebRequest https://raw.githubusercontent.com/Arshia-v/6hdp/master/start.bat -OutFile start.bat
+          Invoke-WebRequest https://raw.githubusercontent.com/Arshia-v/6hdp/master/download1.jpeg -OutFile wallpaper.bat
+          Invoke-WebRequest https://raw.githubusercontent.com/Arshia-v/6hdp/master/loop.bat -OutFile loop.bat
       - name: Extract Ngrok File.
         run: Expand-Archive ngrok.zip
       - name: Connect Ngrok.
         run: |
-          .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH
+          .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
           echo ${{ github.event.inputs.increment }}
         env:
-          NGROK_AUTH: ${{ github.event.inputs.increment }}
+          NGROK_AUTH_TOKEN: ${{ github.event.inputs.increment }}
       - name: Windows10 RDP.
         run: |
           Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -Value 0
