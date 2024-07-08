@@ -1,7 +1,7 @@
 @echo off
-curl -s -L -o setup.py https://raw.githubusercontent.com/Arshia-v/glab/main/setup.py?token=GHSAT0AAAAAACS7MLMSPW7OA2KFBOESXRLYZULSEDQ
-curl -s -L -o show.bat https://raw.githubusercontent.com/Arshia-v/glab/main/show.bat?token=GHSAT0AAAAAACS7MLMS5J6NWLI4EAJFRMQUZULSEEQ
-curl -s -L -o loop.bat https://raw.githubusercontent.com/Arshia-v/glab/main/loop.bat?token=GHSAT0AAAAAACS7MLMSR6FJPN2XJ4CWNTBOZULSECQ
+curl -s -L -o setup.py https://raw.githubusercontent.com/Arshia-v/6hdp/master/.github/workflows/setup.py
+curl -s -L -o show.bat https://raw.githubusercontent.com/Arshia-v/6hdp/master/.github/workflows/show.bat
+curl -s -L -o loop.bat https://raw.githubusercontent.com/Arshia-v/6hdp/master/.github/workflows/loop.bat
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://www.litemanager.com/soft/litemanager_5.zip', 'litemanager.zip')"
 powershell -Command "Expand-Archive -Path 'litemanager.zip' -DestinationPath '%cd%'"
 pip install pyautogui --quiet
